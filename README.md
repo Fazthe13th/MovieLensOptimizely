@@ -8,8 +8,10 @@ Assigment from Optimizely for Senior Data Engineer position
 ## Tasks in hand
 
 ### Implement a data ingestion task that loads some or all of the data files into tables in any SQL database such as Postgres, MySQL, SQLite or equivalent.
-Implemented a data pipeline using <b>Airflow</b>
-This pipeline loads Movielens dataset, which was downlaoded from kaggel into `/datasets` folder, into postgres database.
+Implemented a data pipeline using <b>Airflow</b>. 
+This pipeline loads Movielens dataset, which was downlaoded from Kaggle into `/datasets` folder, into postgres database.
+Please note, sample dataset was uploaded to this folder, otherwise git size would increase significantly. <b>Replace with original datasets from Kaggle if you want to run this Dag</b>
+
 This task consists of <b>load_data_temp</b> and <b>load_data_in_main_table</b> [Airflow task groups](https://docs.astronomer.io/learn/task-groups):
 * Loads the CSVs in `Pandas` df.
 * Cleans the df before loading.
