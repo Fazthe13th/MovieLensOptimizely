@@ -88,6 +88,20 @@ Create a merge request to `main` branch and pull it to production environment.
 
 If there is any new python package necessary, we add the packages to `requirements.txt` and build new Airflow image for deployment.
 
+**[How would you schedule a pipeline that runs the ingestion and the transformation tasks sequentially every day?](#id01)** <a id="id01"></a><!-- ID: 01 -->
+
+I would use a cron job to schedule a pipeline. Like in the pipeline for the assignment, I scheduled the pipeline to run every day at midnight.
+```
+schedule_interval = '0 0 * * *'
+```
+**[How would you ensure the quality of the data generated from the pipeline?](#id02)** <a id="id02"></a><!-- ID: 02 -->
+
+I would write some checks to ensure data quality. Checks like:
+* Is number of rows are same between source and destination? if not need to find reason.
+* If there are any numeric values I would sum the column in source and destination and check if both are same or not.
+* We can manage log tables in pipeline to ensure data is being properly processed.
+
+
 
 
 
